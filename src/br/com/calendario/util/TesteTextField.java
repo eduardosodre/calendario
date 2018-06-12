@@ -1,12 +1,13 @@
 package br.com.calendario.util;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TesteTextField extends JFrame {
 
@@ -44,5 +45,15 @@ public class TesteTextField extends JFrame {
 		txtData.setBounds(106, 82, 127, 20);
 		contentPane.add(txtData);
 		txtData.setColumns(10);
+		
+		JButton btnTeste = new JButton("Teste");
+		btnTeste.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(txtData.getText());
+				System.out.println(txtData.getData());
+			}
+		});
+		btnTeste.setBounds(106, 113, 89, 23);
+		contentPane.add(btnTeste);
 	}
 }

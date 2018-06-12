@@ -244,7 +244,7 @@ public class TextDataChooser extends JFormattedTextField {
 	private MouseAdapter mouseAdapter = new MouseAdapter(){
 		public void mouseClicked(MouseEvent e){
 			if(e.getClickCount() == 2){
-				setText(getData());
+				setText(getDataAtual());
 			}
 		}
 	};
@@ -282,7 +282,11 @@ public class TextDataChooser extends JFormattedTextField {
         return data1;
     }
 	
-	public String getData() {
+	public Date getData() {
+		return convertStringToDate(getText());
+	}
+	
+	private String getDataAtual() {
         String data = "dd/MM/yyyy";
         String data1;
 
